@@ -1,0 +1,21 @@
+.divUp{
+    padding: 200px;
+    
+}
+
+/* body{
+    direction: rtl;
+      background-image: url(images.jpg);
+      background-position: center;
+      background-repeat:inherit;
+} */
+body{
+    background: url(images.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.city-weather{
+    background: white;
+    width: 300px;
+    padding-left: 25px;
+}
