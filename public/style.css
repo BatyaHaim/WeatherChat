@@ -10,12 +10,16 @@
       background-repeat:inherit;
 } */
 body{
-    background: url(images.jpg) no-repeat center;
+    background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/SZMXphYEipbdr8zi/beautiful-clouds-close-up-weather-background_skp3rq4r__F0000.png) no-repeat center;
     background-size: cover;
 }
 
 .city-weather{
-    background: white;
-    width: 300px;
-    padding-left: 25px;
+ 
+    box-shadow: 0 0 6px black;
+    width: 540px;
+    padding-top: 10px;
+    padding-left: 31px;
+    padding-bottom: 18px;
+
 }

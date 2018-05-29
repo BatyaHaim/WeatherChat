@@ -22,6 +22,7 @@ var fetch = function (city) {
 
             }
             array.push(cityPost);
+            upDate();
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log(textStatus);
@@ -41,6 +42,14 @@ var upDate = function () {
     </div>`;
 
         $('.city-list').append(weather);
+
+        var commentsContainer =
+            '<div id="divComment">' +
+            '<input type="text" id="inpCom" placeholder="Your Comment">' +
+            '<button type="button" class="btn btn-primary" id="comBtn">Comment</button>' +
+            '<ul class="comment-list"></ul>' +
+            '</div>';
+            $('.city-weather').append(commentsContainer);
     }
 }
 
@@ -50,11 +59,34 @@ $('#tempBtn').on('click', function () {
     console.log(city)
 
     fetch(city);
-    upDate();
+
 })
 
-// $('#comBtn').on('click', function () {
-//     var comment = $('inpCom').val();
-//     fetch(comment);
-//     upDate();
-// })
+var upDateComment = function(textComment, $commentList, indexCityPost){
+
+    
+    array[indexCityPost].comment.push(textComment);
+    $commentList.append('<input type="button" class="removeCom">Remove</input>' + textComment);
+
+$('.city-weather').append($commentList);
+
+}
+
+$('.city-list').on('click', '#comBtn',function(){
+
+    var textComment = $('#inpCom').val();  
+    var $commentList= $(this).next();  
+    var indexCityPost= $(this).closest('.city-weather').index();
+    
+    upDateComment(textComment, $commentList, indexCityPost);
+})
+
+
+
+$('.removeCom').on('click', function(){
+    textComment.remove();
+})
+
+
+
+
